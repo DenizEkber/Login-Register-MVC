@@ -18,13 +18,13 @@ namespace LoginRegister.Controllers
             _logger = logger;
         }
 
-        // GET: Account/Register
+        
         public IActionResult Register()
         {
             return View();
         }
 
-        // POST: Account/Register
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Register(User user)
@@ -65,13 +65,13 @@ namespace LoginRegister.Controllers
             return View(user);
         }
 
-        // GET: Account/Login
+        
         public IActionResult Login()
         {
             return View();
         }
 
-        // POST: Account/Login
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Login(string email, string password)
@@ -108,13 +108,12 @@ namespace LoginRegister.Controllers
 
                 if (user != null)
                 {
-                    // Başarılı giriş işlemi
-                    // Oturum yönetimi vb. işlemler burada yapılabilir
+                    
                     return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    // Başarısız giriş işlemi
+                    
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
                 }
             }
