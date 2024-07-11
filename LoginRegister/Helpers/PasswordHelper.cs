@@ -5,7 +5,7 @@ using System.Text;
 
 public class PasswordHelper
 {
-    // Salt oluşturma
+    
     private static byte[] GenerateSalt(int length)
     {
         using (var rng = new RNGCryptoServiceProvider())
@@ -16,7 +16,7 @@ public class PasswordHelper
         }
     }
 
-    // Şifreyi hashleme
+    
     public static string HashPassword(string password, out string salt)
     {
         salt = Convert.ToBase64String(GenerateSalt(16)); // 16 byte uzunluğunda salt oluştur
@@ -34,7 +34,7 @@ public class PasswordHelper
         }
     }
 
-    // Şifre doğrulama
+    
     public static bool VerifyPassword(string enteredPassword, string storedHash, string storedSalt)
     {
         byte[] hashBytes = Convert.FromBase64String(storedHash);
