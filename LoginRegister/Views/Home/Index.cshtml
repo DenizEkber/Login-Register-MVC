@@ -1,0 +1,72 @@
+﻿@{
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kareyi Merkezde Yerleştirme</title>
+    <style>
+        body {
+            background: grey;
+        }
+
+        .divBody {
+            margin: 0;
+            height: 100vh; /* Sayfanın tamamını kapla */
+            display: flex;
+            background: black;
+            justify-content: center; /* Yatay ortalamak için */
+            align-items: center; /* Dikey ortalamak için */
+        }
+
+        .square {
+            width: 300px; /* Kare genişliği */
+            height: 300px; /* Kare yüksekliği */
+            background-color: white; /* Kare arka plan rengi */
+            border: 2px solid #2980b9; /* Kare kenarlık rengi ve kalınlığı */
+            display: flex;
+            justify-content: center; /* Yatay ortalamak için */
+            align-items: center; /* Dikey ortalamak için */
+        }
+
+        .button {
+            width: 100px; /* Buton genişliği */
+            height: 50px; /* Buton yüksekliği */
+            background-color: white; /* Arka plan rengi */
+            color: black; /* Yazı rengi */
+            border: 2px solid black; /* Kenarlık yok */
+            border-radius: 5px; /* Kenar yuvarlaklığı */
+            margin-right: 10px; /* Sağa boşluk */
+            cursor: pointer; /* Fare imleci el işareti */
+            font-size: 16px; /* Yazı tipi boyutu */
+            font-weight: bold; /* Kalın yazı */
+            text-align: center; /* Metni ortala */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none; /* Link görünümü kaldır */
+        }
+    </style>
+</head>
+<body>
+    <div class="divBody">
+        <div class="square">
+
+            <button onclick="redirectToLogin()" class="Login button">Login</button>
+            <button onclick="redirectToRegister()" class="Register button">Register</button>
+
+        </div>
+        <script>
+            function redirectToLogin() {
+                window.location.href = "/Account/Login"; // Login sayfasına yönlendir
+            }
+            function redirectToRegister() {
+                window.location.href = "/Account/Register"; // Register sayfasına yönlendir
+            }
+        </script>
+    </div>
+
+</body>
+</html>
